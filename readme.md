@@ -8,6 +8,18 @@
   * [Calendrier](documents/calendrier.md)
   * [Docker](docker/docker.md)
 
+## Notes de cours
+
+ * Révision
+    * [CSS et SCSS](notes/revision/css.md)
+    * [Bootstrap](notes/revision/bootstrap.md)
+    * [Tailwind CSS](notes/revision/tailwind.md)
+
+## Ateliers
+
+  * Révision
+      * [Atelier 1 - Tailwind CSS](ateliers/1-revision/1-tailwind.md)
+
 ## Références
 
 * [PHP.net](http://php.net)
