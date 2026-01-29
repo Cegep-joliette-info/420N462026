@@ -66,6 +66,17 @@ services:
     networks:
       - app-network
 
+  css:
+    image: node:latest
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    # Garder seulement une des deux lignes de commande suivantes selon que vous utilisez Sass ou Tailwind CSS
+    #command: sh -c "npm install -g sass && sass --watch .:. --no-source-map"
+    command: sh -c "npm install tailwindcss @tailwindcss/cli && npx @tailwindcss/cli -i ./input.css -o ./output.css --watch"
+    networks:
+      - app-network
+      
 networks:
   app-network:
     driver: bridge
