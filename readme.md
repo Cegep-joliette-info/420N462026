@@ -14,11 +14,20 @@
     * [CSS et SCSS](notes/revision/css.md)
     * [Bootstrap](notes/revision/bootstrap.md)
     * [Tailwind CSS](notes/revision/tailwind.md)
+  * [PHP](notes/php/php.md)
+    * [Fonctionnement](notes/php/fonctionnement.md)
+    * [Normes de programmation](notes/php/normes.md)
+    * [Variables](notes/php/variables.md)
+    * [Types](notes/php/types.md)
+    * [Fonctions](notes/php/fonctions.md)
+    * [Conditions](notes/php/conditions.md)
+    * [Boucles](notes/php/boucles.md)
+    * [Affichage](notes/php/affichage.md)
 
 ## Ateliers
 
-  * Révision
-      * [Atelier 1 - Tailwind CSS](ateliers/1-revision/1-tailwind.md)
+  * [Atelier 1 - Tailwind CSS](ateliers/1-tailwind.md)
+  * [Atelier 2 - Introduction à PHP](ateliers/2-php.md)
 
 ## Références
 

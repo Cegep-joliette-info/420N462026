@@ -1,4 +1,4 @@
-# Chapitre 1 - Atelier 1 - Tailwind CSS
+# Atelier 1 - Tailwind CSS
 
 Ouvrez mon [corrigé](../../corriges/1-revision/1-tailwind.html) (sans trop regarder le code) et testez la réactivité en redimensionnant la fenêtre et testez les `hover` et `focus`. Remarquez aussi que le mode sombre est supporté automatiquement.
 
