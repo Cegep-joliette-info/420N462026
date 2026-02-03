@@ -23,11 +23,13 @@
     * [Conditions](notes/php/conditions.md)
     * [Boucles](notes/php/boucles.md)
     * [Affichage](notes/php/affichage.md)
+    * [Superglobales](notes/php/superglobales.md)
 
 ## Ateliers
 
   * [Atelier 1 - Tailwind CSS](ateliers/1-tailwind.md)
   * [Atelier 2 - Introduction à PHP](ateliers/2-php.md)
+  * [Atelier 3 - Superglobales](ateliers/3-superglobales.md)
 
 ## Références
 
