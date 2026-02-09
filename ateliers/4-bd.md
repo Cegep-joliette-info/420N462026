@@ -16,10 +16,10 @@ En PHP, créez les quatres actions CRUD (Create, Read, Update, Delete) pour les 
 
 Copies d'écrans (vous n'êtes pas obligés de faire la même chose), action Read:
 
-![Copie d'écran Read](../imgs/atelier03/read.png)
+![Copie d'écran Read](../images/atelier04/liste.png)
 
 Actions Edit et create sont très similaires:
 
-![Copie d'écran Create et Update](../imgs/atelier03/create.png)
+![Copie d'écran Create et Update](../images/atelier04/create.png)
 
 L'action Delete n'a pas d'écran dans mon exemple.
