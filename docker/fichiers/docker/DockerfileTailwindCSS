@@ -1,0 +1,19 @@
+FROM node:latest
+
+ARG TAILWIND_VERSION=v4.1.18
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends ca-certificates curl \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN curl -fsSL \
+    "https://github.com/tailwindlabs/tailwindcss/releases/download/${TAILWIND_VERSION}/tailwindcss-linux-x64" \
+    -o /usr/local/bin/tailwindcss \
+ && chmod +x /usr/local/bin/tailwindcss \
+ && /usr/local/bin/tailwindcss --help >/dev/null
+
+COPY docker/watch_tailwind.sh /usr/local/bin/watch_tailwind.sh
+RUN chmod +x /usr/local/bin/watch_tailwind.sh
+
+WORKDIR /var/www/html
+ENTRYPOINT ["/usr/local/bin/watch_tailwind.sh"]

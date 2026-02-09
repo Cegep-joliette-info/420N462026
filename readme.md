@@ -24,12 +24,17 @@
     * [Boucles](notes/php/boucles.md)
     * [Affichage](notes/php/affichage.md)
     * [Superglobales](notes/php/superglobales.md)
+  * [Base de données](notes/bd/bd.md)
+    * [Sécurité](notes/bd/securite.md)
+    * [SQL](notes/bd/sql.md)
+    * [PDO](notes/bd/pdo.md)
 
 ## Ateliers
 
   * [Atelier 1 - Tailwind CSS](ateliers/1-tailwind.md)
   * [Atelier 2 - Introduction à PHP](ateliers/2-php.md)
   * [Atelier 3 - Superglobales](ateliers/3-superglobales.md)
+  * [Atelier 4 - Base de données](ateliers/4-bd.md)
 
 ## Références
 
