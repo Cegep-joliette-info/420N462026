@@ -12,9 +12,11 @@ Dans votre BD, créez une table monstre qui contient:
 
 Insérez manuellement au moins 3 monstres. Créez la classe PHP "Combatant" qui représente cette table.
 
+Chaque classe de personnage sera une classe dans le code, elles ne proviennent pas de la BD (voir Partie 2 de l'atelier, pour l'instant toutes les classes peuvent être un Combatant).
+
 Dans votre index.php, créez un select ou plusieurs bouton radio pour choisir une classe de personnage (juste 2 ou 3 classes de personnage). Pour l'instant il n'y a aucune différence entre les classes.
 
-![Page 1](../imgs/atelier05/page1.png)
+![Page 1](../images/atelier05/choix.png)
 
 Une fois soumis, on va à la 2e page. On affiche le nom de la classe choisie ainsi qu'un monstre choisi au hasard.
 
