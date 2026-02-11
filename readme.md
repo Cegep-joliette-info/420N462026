@@ -28,6 +28,10 @@
     * [Sécurité](notes/bd/securite.md)
     * [SQL](notes/bd/sql.md)
     * [PDO](notes/bd/pdo.md)
+  * [Classes](notes/class/class.md)
+    * [Héritage](notes/class/oo.md)
+    * [Select SQL dans une classe](notes/class/bd.md)
+    * [Inclure d'autres fichiers](notes/class/include.md)
 
 ## Ateliers
 
