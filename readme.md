@@ -10,6 +10,8 @@
 
 ## Notes de cours
 
+ * IA
+    * [Agents.md](notes/ia/agents.md)
  * Révision
     * [CSS et SCSS](notes/revision/css.md)
     * [Bootstrap](notes/revision/bootstrap.md)
@@ -39,6 +41,7 @@
   * [Atelier 2 - Introduction à PHP](ateliers/2-php.md)
   * [Atelier 3 - Superglobales](ateliers/3-superglobales.md)
   * [Atelier 4 - Base de données](ateliers/4-bd.md)
+  * [Atelier 5 - Classes](ateliers/5-classes.md)
 
 ## Références
 
