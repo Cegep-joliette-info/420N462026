@@ -1,0 +1,5 @@
+CREATE TABLE `atelier5`.`monstre` (`id` INT UNSIGNED NOT NULL AUTO_INCREMENT , `nom` VARCHAR(20) NOT NULL , `vieMax` TINYINT NOT NULL , `attaque` TINYINT NOT NULL , `defense` TINYINT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+INSERT INTO `atelier5`.`monstre` (`id`, `nom`, `vieMax`, `attaque`, `defense`) VALUES (NULL, 'Slime', '10', '2', '1');
+INSERT INTO `atelier5`.`monstre` (`id`, `nom`, `vieMax`, `attaque`, `defense`) VALUES (NULL, 'Golem', '30', '2', '6');
+INSERT INTO `atelier5`.`monstre` (`id`, `nom`, `vieMax`, `attaque`, `defense`) VALUES (NULL, 'Ogre', '20', '3', '3');
