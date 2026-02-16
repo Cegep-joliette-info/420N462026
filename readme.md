@@ -34,6 +34,7 @@
     * [Héritage](notes/class/oo.md)
     * [Select SQL dans une classe](notes/class/bd.md)
     * [Inclure d'autres fichiers](notes/class/include.md)
+  * [MVC](notes/mvc/simple.md)
 
 ## Ateliers
 
