@@ -1,0 +1,3 @@
+CREATE TABLE `atelier6`.`utilisateurs` (`id` INT NOT NULL AUTO_INCREMENT , `nom_utilisateur` VARCHAR(320) NOT NULL , `mot_de_passe` VARCHAR(100) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+INSERT INTO `utilisateurs`(`nom_utilisateur`, `mot_de_passe`) VALUES ('admin','admin');
