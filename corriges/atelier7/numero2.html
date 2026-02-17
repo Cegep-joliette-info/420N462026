@@ -1,0 +1,73 @@
+<!-- Dans ce fichier HTML, met un titre "Atelier 7 - Numéro 2", crée un formulaire qui contient les champs "Année", "Mois" et "Jour". Mois est un select qui liste tous les mois, avec les valeurs 1 à 12. Année et Jour sont des champs numériques. Met aussi un bouton bleu Valider. -->
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atelier 7 - Numero 2</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <main class="mx-auto max-w-2xl px-6 py-10">
+        <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">Atelier 7 - Numero 2</h1>
+        <div id="boite-erreur" class="hidden mt-6 rounded-xl border border-red-400 bg-red-50 p-4 dark:border-red-700 dark:bg-red-900"><p class="font-semibold text-red-700 dark:text-red-200"><em>La date n'est pas valide.</em></p></div>
+        <div id="boite-valide" class="hidden mt-4 rounded-xl border border-green-400 bg-green-50 p-4 dark:border-green-700 dark:bg-green-900"><p class="font-semibold text-green-700 dark:text-green-200"><em>La date est valide.</em></p></div>
+        <form class="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900" action="#" method="post">
+            <div class="grid gap-5 sm:grid-cols-3">
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300" for="jour">Jour</label>
+                    <input class="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-slate-900 shadow-sm transition placeholder:text-slate-400 hover:border-slate-400 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-white dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 dark:hover:border-slate-600 dark:focus:border-slate-400 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900" id="jour" name="jour" type="number" inputmode="numeric" min="1" max="31" step="1" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300" for="mois">Mois</label>
+                    <select class="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-slate-900 shadow-sm transition hover:border-slate-400 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-white dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:border-slate-600 dark:focus:border-slate-400 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900" id="mois" name="mois" required>
+                        <option value="1">Janvier</option>
+                        <option value="2">Février</option>
+                        <option value="3">Mars</option>
+                        <option value="4">Avril</option>
+                        <option value="5">Mai</option>
+                        <option value="6">Juin</option>
+                        <option value="7">Juillet</option>
+                        <option value="8">Aout</option>
+                        <option value="9">Septembre</option>
+                        <option value="10">Octobre</option>
+                        <option value="11">Novembre</option>
+                        <option value="12">Décembre</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300" for="annee">Annee</label>
+                    <input class="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-slate-900 shadow-sm transition placeholder:text-slate-400 hover:border-slate-400 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-white dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 dark:hover:border-slate-600 dark:focus:border-slate-400 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900" id="annee" name="annee" type="number" inputmode="numeric" min="1" step="1" required>
+                </div>
+            </div>
+            <button class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:bg-blue-500 dark:hover:bg-blue-400 dark:focus-visible:ring-blue-400 dark:focus-visible:ring-offset-slate-900" type="submit">Valider</button>
+        </form>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.18/dayjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.18/locale/fr-ca.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.18/plugin/localizedFormat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.18/plugin/relativeTime.min.js"></script>
+    <script>
+        dayjs.locale('fr-ca');
+        dayjs.extend(dayjs_plugin_localizedFormat);
+        dayjs.extend(dayjs_plugin_relativeTime);
+        let form = document.querySelector('form');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            let annee = form.querySelector('#annee').value;
+            let mois = form.querySelector('#mois').value;
+            let jour = form.querySelector('#jour').value;
+            let date = dayjs(`${annee}-${mois}-${jour}`);
+            if (date.isValid() && date.year() == annee && date.month() == mois - 1 && date.date() == jour) {
+                document.querySelector('#boite-valide em').textContent = `Le ${date.format('LL')}, ${date.fromNow()}.`;
+                document.querySelector('#boite-valide').classList.remove('hidden');
+                document.querySelector('#boite-erreur').classList.add('hidden');
+            } else {
+                document.querySelector('#boite-valide').classList.add('hidden');
+                document.querySelector('#boite-erreur').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

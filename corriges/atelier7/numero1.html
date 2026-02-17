@@ -1,0 +1,55 @@
+<!-- Dans ce fichier HTML, met un titre "Atelier 7 - Numéro 1", un formulaire qui contient un champ texte nommé "Texte" et un bouton "Ajouter", à droite ou en-dessous (selon la résolution) ajouter une liste similaire au list-group de Boostrap, les éléments sont cliquables -->
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atelier 7 - Numero 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <main class="mx-auto max-w-4xl px-6 py-10">
+        <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">Atelier 7 - Numero 1</h1>
+        <div class="mt-8 flex flex-col gap-6 md:flex-row">
+            <section class="w-full md:w-1/2">
+                <h2 class="text-lg font-semibold">Ajouter un element</h2>
+                <form class="mt-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900" action="#" method="post">
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300" for="texte">Texte</label>
+                    <input class="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-slate-900 shadow-sm transition placeholder:text-slate-400 hover:border-slate-400 focus:border-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-white dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 dark:hover:border-slate-600 dark:focus:border-slate-400 dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900" id="texte" name="texte" type="text" autocomplete="off">
+                    <button class="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900" type="submit">Ajouter</button>
+                </form>
+            </section>
+            <section class="w-full md:w-1/2" aria-label="Liste d'elements">
+                <h2 class="text-lg font-semibold">Liste</h2>
+                <ul class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+<script>
+    let form = document.querySelector('form');
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        let input = form.querySelector('input');
+        let value = input.value.trim();
+        if (value) {
+            // textContent et createElement sont utilisés pour éviter les attaques XSS, qu'on va voir plus tard
+            let ul = document.querySelector('ul');
+            let li = document.createElement('li');
+            let a = document.createElement('a');
+            a.className = "block border-b border-slate-200 px-4 py-3 text-slate-900 transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:border-slate-800 dark:text-slate-100 dark:hover:bg-slate-800 dark:focus-visible:ring-slate-400 dark:focus-visible:ring-offset-slate-900";
+            a.href = "#";
+            a.textContent = value;
+            li.appendChild(a);
+            ul.appendChild(li);
+            input.value = "";
+
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                ul.removeChild(li);
+            });
+        }
+    });
+</script>
+</html>

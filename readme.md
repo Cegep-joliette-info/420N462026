@@ -35,6 +35,8 @@
     * [Select SQL dans une classe](notes/class/bd.md)
     * [Inclure d'autres fichiers](notes/class/include.md)
   * [MVC](notes/mvc/simple.md)
+  * API
+    * [JavaScript](notes/api/javascript.md)
 
 ## Ateliers
 
@@ -44,6 +46,7 @@
   * [Atelier 4 - Base de données](ateliers/4-bd.md)
   * [Atelier 5 - Classes](ateliers/5-classes.md)
   * [Atelier 6 - MVC simple](ateliers/6-mvc-simple.md)
+  * [Atelier 7 - JavaScript](ateliers/7-javascript.md)
 
 ## Références
 
