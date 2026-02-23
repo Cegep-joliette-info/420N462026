@@ -37,6 +37,7 @@
   * [MVC](notes/mvc/simple.md)
   * API
     * [JavaScript](notes/api/javascript.md)
+    * [API](notes/api/api.md)
 
 ## Ateliers
 
@@ -47,6 +48,7 @@
   * [Atelier 5 - Classes](ateliers/5-classes.md)
   * [Atelier 6 - MVC simple](ateliers/6-mvc-simple.md)
   * [Atelier 7 - JavaScript](ateliers/7-javascript.md)
+  * [Atelier 8 - API](ateliers/8-api.md)
 
 ## Références
 

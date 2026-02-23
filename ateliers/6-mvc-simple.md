@@ -1,6 +1,6 @@
 # Atelier 6
 
-Créez une table `utilisateurs` qui contient: id, nom_utilisateur et mot_de_passe. Insérez au moins 1 utilisateur.
+Créez une table `utilisateurs` qui contient: id, nom_utilisateur et mot_de_passe. Le mot de passe est enregistré en clair. Insérez au moins 1 utilisateur.
 
 Avec une architecture MVC simple, faites une page de connexion (login). Lorsque l'utilisateur soumet le formulaire affichez un des messages suivants:
 
