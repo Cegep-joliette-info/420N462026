@@ -20,7 +20,7 @@ Dans votre index.php, créez un select ou plusieurs bouton radio pour choisir un
 
 Une fois soumis, on va à la 2e page. On affiche le nom de la classe choisie ainsi qu'un monstre choisi au hasard.
 
-![Page 2](../imgs/atelier05/page2.png)
+![Page 2](../imgs/atelier05/combat.png)
 
 Quand j'appuie sur Attaquer, ça envoie une requête GET ou POST. Le personnage attaque suivit immédiatement du monstre s'il est en vie.
 
