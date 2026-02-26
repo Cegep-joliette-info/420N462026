@@ -7,7 +7,7 @@ Aucune autre méthode de remise ne sera acceptée, le git doit seulement conteni
 
 ## Déroulement du jeu
 
-*Démo à venir*
+[Démo mp4](demo.mp4)
 
  * Le joueur se crée un compte et/ou se connecte, le mot de passe peut être enregistré en clair
  * Le joueur choisi parmi les 3 personnages disponibles et débute la partie
