@@ -50,6 +50,10 @@
   * [Atelier 7 - JavaScript](ateliers/7-javascript.md)
   * [Atelier 8 - API](ateliers/8-api.md)
 
+## Travaux pratiques
+
+  * [TP1](tps/tp1/tp1.md)
+
 ## Références
 
 * [PHP.net](http://php.net)
