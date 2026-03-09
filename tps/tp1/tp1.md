@@ -90,13 +90,13 @@ Attention, l'espace disque de chaque CPanel est limité à 5120 Mo incluant la B
 
 | Code | Fait | Partiellement | Non-fait |
 | --- | --- | --- | --- |
-| MVC (modèles, vues, contrôleurs, dépôts) | Complet (15) | Une mauvaise séparation (8) | Une couche manquante (0) |
+| MVC (modèles, vues, contrôleurs) | Complet (15) | Une mauvaise séparation (8) | Une couche manquante (0) |
 | Bonnes pratiques OO (héritage, pas de if/switch sur personnages et monstres) | Complet (4) | - | Plusieurs violations (0) |
 | PHP typé (paramètres, valeurs de retour) et strict_types activé | Tout typé (2) | Quelques oublis (1) | Non-typé (0) |
 | Sécurité (toutes les pages protégées, accès légitimes vérifiés) | Parfait (4) | 1 oubli (2) | 2 oublis ou plus (0) |
 | Respect des normes de programmation | 0 ou 1 erreur (3) | 2 à 4 erreurs (1) | 5 erreurs ou plus (0) |
 | A11Y | Parfait (3) | 1 erreur (1) | 2 erreurs ou plus (0) |
-| Git (commits réguliers et messages descriptifs) | Propre (2) | - | Absent ou un seul commit (0) |
+| Git (pas de fichiers inutiles) | Propre (2) | - | Problématique (0) |
 | Déploiement (CPanel) | Fonctionnel (5) | - | Non-déployé (0) |
 | Autoévaluation | Représentative (2) | - | Manquante ou erronée (0) |
 
