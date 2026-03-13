@@ -1,6 +1,6 @@
 # TP1
 
-Travail individuel, à remettre avant le 19 mars 8h00. Compte pour 10\% de votre session.
+Travail individuel, à remettre avant le 24 mars 8h00. Compte pour 10\% de votre session.
 
 Le code doit être sur git (https://classroom.github.com/a/bzhErDkU) et le site publié sur votre CPanel.
 Aucune autre méthode de remise ne sera acceptée, le git doit seulement contenir le code de votre projet.
