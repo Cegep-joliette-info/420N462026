@@ -14,10 +14,10 @@
 | 25 février | API                       | Atelier 8         |
 |            | *Relâche*                 |                   |
 | 9 mars     | Temps pour le TP1         |                   |
-| 11 mars    | Déploiement sur CPanel    |                   |
-| 16 mars    | Temps pour le TP1         |                   |
-| 18 mars    | **Examen 1**              | *Remise TP1*      |
-| 23 mars    |                           |                   |
+| 11 mars    | *Tempête*                 |                   |
+| 16 mars    | Déploiement sur CPanel    |                   |
+| 18 mars    | **Examen 1**              |                   |
+| 23 mars    | Temps pour le TP1         | *Remise TP1*      |
 | 25 mars    |                           |                   |
 | 30 mars    |                           |                   |
 | 1 avril    |                           |                   |
@@ -34,5 +34,6 @@
 | 11 mai     |                           |                   |
 | 13 mai     |                           |                   |
 | 18 mai     |                           |                   |
-| 20 mai     | **Examen 2**              |                   |
+| 20 mai     |                           |                   |
 | 25 mai     |                           |                   |
+| 26 mai<br>Horaire du mercredi | **Examen 2** |             |
