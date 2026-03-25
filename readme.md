@@ -35,6 +35,8 @@
     * [Select SQL dans une classe](notes/class/bd.md)
     * [Inclure d'autres fichiers](notes/class/include.md)
   * [MVC](notes/mvc/simple.md)
+    * [MVC avancé](notes/mvc/avance.md)
+    * [URLs](notes/mvc/urls.md)
   * API
     * [JavaScript](notes/api/javascript.md)
     * [API](notes/api/api.md)
@@ -49,6 +51,7 @@
   * [Atelier 6 - MVC simple](ateliers/6-mvc-simple.md)
   * [Atelier 7 - JavaScript](ateliers/7-javascript.md)
   * [Atelier 8 - API](ateliers/8-api.md)
+  * [Atelier 9 - Atelier en continu](ateliers/9-atelier-continu.md)
 
 ## Travaux pratiques
 
