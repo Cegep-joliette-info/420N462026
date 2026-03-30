@@ -40,6 +40,13 @@
   * API
     * [JavaScript](notes/api/javascript.md)
     * [API](notes/api/api.md)
+  * [Sécurité](notes/securite/securite.md)
+    1. Manquement dans l'ACL
+        * [Manquement dans l'ACL](notes/securite/acl.md)
+        * [Traversée de dossiers](notes/securite/directory.md)
+        * [CSRF](notes/securite/csrf.md)
+        * [SSRF](notes/securite/ssrf.md)
+        * [Redirection ouverte](notes/securite/redirection.md)
 
 ## Ateliers
 

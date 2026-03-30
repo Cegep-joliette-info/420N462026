@@ -19,4 +19,5 @@ Un utilisateur connecté n'a plus accès aux 3 pages précédentes, mais a accè
 
 ## Partie 2 - Sécurité
 
-Liste à venir
+ * Protégez toutes les pages avec un bon ACL (pas de sécurité par obfuscation).
+ * Protégez les 3 pages contre les attaques CSRF.

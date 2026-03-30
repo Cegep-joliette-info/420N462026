@@ -19,7 +19,7 @@
 | 18 mars    | **Examen 1**              |                   |
 | 23 mars    | Temps pour le TP1         | *Remise TP1*      |
 | 25 mars    | MVC avancé                | Atelier 9         |
-| 30 mars    |                           |                   |
+| 30 mars    | Sécurité 1                |                   |
 | 1 avril    |                           |                   |
 | 6 avril    |                           |                   |
 | 8 avril    |                           |                   |
