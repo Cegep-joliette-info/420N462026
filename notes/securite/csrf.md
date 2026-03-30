@@ -37,3 +37,5 @@ Le jeton peut être généré de plusieurs manières, chaque méthode a un nivea
 [Exemple de formulaire sécurisé avec la méthode 1](/exemples/csrf/safe.php)
 
 Pour votre TP2 vous devrez utiliser la 3e méthode.
+
+Référence: https://www.hacksplaining.com/app/lessons/csrf/prevention

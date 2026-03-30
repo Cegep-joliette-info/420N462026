@@ -13,3 +13,5 @@ header('location: ' . $_GET['returnurl']);
 
 Le pirate pourrait envoyer un lien qui redirigerait vers un site frauduleux ou à caractère problématique.
 Si vous implémentez cette fonctionnalité, gardez le "returnurl" dans la session ou assurez vous qu'il s'agit bien d'un url relatif et non un absolu.
+
+Référence: https://www.hacksplaining.com/app/lessons/open-redirects/prevention

@@ -21,3 +21,5 @@ Pour vous protéger:
 * Valider les données sur votre serveur avant de les envoyer.
 * Ne pas faire d'appel vers un domaine saisi par l'utilisateur, ou alors faire une liste d'autorisation de domaines.
 * Ne pas faire d'appel HTTP pour des utilisateurs anonymes.
+
+Référence: https://www.hacksplaining.com/app/lessons/ssrf/prevention
