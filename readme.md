@@ -46,7 +46,7 @@
         * [Traversée de dossiers](notes/securite/directory.md)
         * [CSRF](notes/securite/csrf.md)
         * [SSRF](notes/securite/ssrf.md)
-        * [Redirection ouverte](notes/securite/redirection.md)
+        * [Redirection ouverte](notes/securite/redirect.md)
 
 ## Ateliers
 
