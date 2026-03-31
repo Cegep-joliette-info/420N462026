@@ -47,6 +47,17 @@
         * [CSRF](notes/securite/csrf.md)
         * [SSRF](notes/securite/ssrf.md)
         * [Redirection ouverte](notes/securite/redirect.md)
+    2. Mauvaise configuration
+        * [Paramètres de sécurité laxistes](notes/securite/lax.md)
+        * [XXE](notes/securite/xxe.md)
+        * [Bombe XML](notes/securite/xml-bombs.md)
+    3. Défaillances de la chaîne d'approvisionnement logicielle
+        * [Dépendances vulnérables](notes/securite/toxic.md)
+    4. Défaillances cryptographiques
+        * [Certificat SSL](notes/securite/ssl.md)
+        * [Dégradation SSL](notes/securite/ssl-stripping.md)
+        * [Attaque par déclassement](notes/securite/downgrade.md)
+        * [Redirection ouverte](notes/securite/redirect.md)
 
 ## Ateliers
 
