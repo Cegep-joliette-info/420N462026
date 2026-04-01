@@ -1,6 +1,6 @@
 # Sécurité WEB - base
 
-L'OWASP (Open Web Application Security Project) a regroupé les types de faille et les a priorisé en ordre d'occurence (et plusieurs autres critères).
+L'OWASP (Open Web Application Security Project) a regroupé les types de failles et les a priorisés en ordre d'occurrence (et plusieurs autres critères).
 Ce chapitre est construit en suivant l'ordre suggéré par le [TOP 10 de l'OWASP 2025](https://owasp.org/Top10/), sauf cette page qui montre la base de la sécurité informatique.
 
 En sécurisant un site web, rappelez-vous que c'est impossible de faire un site impossible à pirater.
@@ -10,9 +10,9 @@ Votre but sera donc de:
 
 ## Données non-fiables
 
-Les données pouvant être manipulés par un utilisateur sont considérés comme non-fiables.
-Ça inclus toutes les variables superglobales sauf `$_SESSION`.
-Attention, si une donnée non-fiable a été sauvegardé dans la base de données ou dans la session, on la considère quand même comme non-fiable.
+Les données pouvant être manipulées par un utilisateur sont considérées comme non-fiables.
+Ça inclut toutes les variables superglobales sauf `$_SESSION`.
+Attention, si une donnée non-fiable a été sauvegardée dans la base de données ou dans la session, on la considère quand même comme non-fiable.
 
 Toutes les données non-fiables doivent être analysées pour s'assurer qu'aucune faille puisse être exploitée.
 
@@ -25,7 +25,7 @@ En anglais c'est _allow list_ et _deny list_.
 - Liste de rejet: On refuse les éléments suivants.
 
 Les deux listes vont arriver au même résultat, mais la liste d'autorisation va être plus sécuritaire.
-Si vous oubliez un élément dans la liste d'autorisation, le client vous contact et vous ajustez le code.
+Si vous oubliez un élément dans la liste d'autorisation, le client vous contacte et vous ajustez le code.
 Si vous oubliez un élément dans la liste de rejet, le pirate s'amuse.
 
 Exemple de projet où vous pourriez choisir entre une liste d'autorisation ou de rejet:
@@ -37,11 +37,11 @@ Exemple de projet où vous pourriez choisir entre une liste d'autorisation ou de
 
 Plus de la configuration que de la programmation.
 Le principe est de donner le moins de droit possible à votre utilisateur système qui exécute le logiciel Apache ou MariaDB.
-Par exemple, si un pirate réussi à injecter du code PHP dans votre site, mais que votre utilisateur apache a accès root au système, il peut avoir beaucoup trop de plaisir.
+Par exemple, si un pirate réussit à injecter du code PHP dans votre site, mais que votre utilisateur apache a accès root au système, il peut avoir beaucoup trop de plaisir.
 Donc votre utilisateur apache doit avoir accès seulement aux fichiers web.
 Votre utilisateur MariaDB doit seulement pouvoir faire les types de requêtes SQL utilisés par votre système.
 
-C'est plus facile ajouter un privilège à un utilisateur que de réparer un système...
+C'est plus facile d'ajouter un privilège à un utilisateur que de réparer un système...
 
 ## Champ de mot de passe
 
