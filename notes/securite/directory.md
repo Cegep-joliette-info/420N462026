@@ -54,4 +54,6 @@ $fichier = basename($_GET['fichier'] ?? '');
 readfile('/var/www/telechargements/' . $fichier);
 ```
 
-Référence: https://www.hacksplaining.com/app/lessons/directory-traversal/prevention
+Références:
+  * https://www.hacksplaining.com/app/lessons/directory-traversal/prevention
+  * https://portswigger.net/web-security/file-path-traversal

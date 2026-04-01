@@ -55,4 +55,6 @@ if (!estUrlSure($url)) {
 $contenu = file_get_contents($url);
 ```
 
-Référence: https://www.hacksplaining.com/app/lessons/ssrf/prevention
+Références:
+  * https://www.hacksplaining.com/app/lessons/ssrf/prevention
+  * https://portswigger.net/web-security/ssrf

@@ -33,4 +33,6 @@ Le serveur remplace `&secret;` par le contenu de `/etc/passwd` avant de traiter 
 * Préférer des formats moins risqués (JSON) lorsque XML n'est pas requis.
 * Attention aux surfaces d'attaque cachées: les fichiers SVG et DOCX contiennent du XML et sont aussi vulnérables si vous les parsez.
 
-Référence: https://www.hacksplaining.com/app/lessons/xml-external-entities/prevention
+Références: 
+  * https://www.hacksplaining.com/app/lessons/xml-external-entities/prevention
+  * https://portswigger.net/web-security/xxe

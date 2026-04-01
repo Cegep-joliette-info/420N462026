@@ -66,4 +66,6 @@ Il existe d'autres méthodes de protection complémentaires (pas nécessaire pou
   }
   ```
 
-Référence: https://www.hacksplaining.com/app/lessons/csrf/prevention
+Références:
+ * https://www.hacksplaining.com/app/lessons/csrf/prevention
+ * https://portswigger.net/web-security/csrf
