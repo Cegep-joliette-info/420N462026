@@ -58,6 +58,11 @@
         * [Dégradation SSL](notes/securite/ssl-stripping.md)
         * [Attaque par déclassement](notes/securite/downgrade.md)
         * [Redirection ouverte](notes/securite/redirect.md)
+    5. Injection
+        * [Injection SQL](notes/securite/sql.md)
+        * [Injection de commande](notes/securite/command.md)
+        * [Injection de Regex](notes/securite/regex.md)
+        * [XSS](notes/securite/xss.md)
 
 ## Ateliers
 

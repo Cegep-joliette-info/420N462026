@@ -21,19 +21,19 @@
 | 25 mars    | MVC avancé                | Atelier 9         |
 | 30 mars    | Sécurité 1                |                   |
 | 1 avril    | Sécurité 2, 3 et 4        |                   |
-| 6 avril    | Sécurité 5                |                   |
-| 8 avril    | Sécurité 6 et 7           |                   |
-| 13 avril   | Sécurité 8, 9 et 10       |                   |
-| 15 avril   | Sécurité AI               |                   |
-| 20 avril   | Temps pour l'atelier 9    |                   |
-| 22 avril   | **Examen Sécurité**       |                   |
-| 27 avril   | Tests unitaires           |                   |
-| 29 avril   | Tests d'acceptation       |                   |
-| 4 mai      | Paiement en ligne         |                   |
-| 6 mai      | GD                        |                   |
-| 11 mai     | OAuth2                    |                   |
-| 13 mai     | Laravel                   |                   |
-| 18 mai     | Temps pour le TP2         |                   |
+| 6 avril    | *Congé Pâques*            |                   |
+| 8 avril    | Sécurité 5                |                   |
+| 13 avril   | Sécurité 6 et 7           |                   |
+| 15 avril   | Sécurité 8, 9 et 10       |                   |
+| 20 avril   | Sécurité AI               |                   |
+| 22 avril   | Temps pour l'atelier 9    |                   |
+| 27 avril   | **Examen Sécurité**       |                   |
+| 29 avril   | Tests unitaires           |                   |
+| 4 mai      | Tests d'acceptation       |                   |
+| 6 mai      | Paiement en ligne         |                   |
+| 11 mai     | GD                        |                   |
+| 13 mai     | *Congé EUF*               |                   |
+| 18 mai     | *Congé Patriotes*         |                   |
 | 20 mai     | Temps pour le TP2         |                   |
 | 25 mai     | Temps pour le TP2         |                   |
 | 26 mai<br>Horaire du mercredi | **Examen 2** |             |
