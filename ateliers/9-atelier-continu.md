@@ -24,3 +24,6 @@ Un utilisateur connecté n'a plus accès aux 3 pages précédentes, mais a accè
 
  * Protégez les pages contre tous les types d'attaques XSS.
  * Protégez les pages contre les injections SQL.
+
+ * Sécurisez la session et le cookie de session.
+ * Protégez les pages contre les attaques de recensement d'utilisateurs.

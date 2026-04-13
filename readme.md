@@ -26,6 +26,7 @@
     * [Boucles](notes/php/boucles.md)
     * [Affichage](notes/php/affichage.md)
     * [Superglobales](notes/php/superglobales.md)
+    * [Courriel](notes/php/courriel.md)
   * [Base de données](notes/bd/bd.md)
     * [Sécurité](notes/bd/securite.md)
     * [SQL](notes/bd/sql.md)
@@ -63,6 +64,13 @@
         * [Injection de commande](notes/securite/command.md)
         * [Injection de Regex](notes/securite/regex.md)
         * [XSS](notes/securite/xss.md)
+    6. Conception non sécurisée
+        * à venir
+    7. Échecs d'authentification
+        * [Gestion du mot de passe](notes/securite/password.md)
+        * [Escalade de privilèges](notes/securite/escalation.md)
+        * [Recensement des utilisateurs](notes/securite/enumeration.md)
+        * [Vol de session](notes/securite/session_hijack.md)
 
 ## Ateliers
 

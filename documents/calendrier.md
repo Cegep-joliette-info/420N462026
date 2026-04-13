@@ -23,8 +23,8 @@
 | 1 avril    | Sécurité 2, 3 et 4        |                   |
 | 6 avril    | *Congé Pâques*            |                   |
 | 8 avril    | Sécurité 5                |                   |
-| 13 avril   | Sécurité 6 et 7           |                   |
-| 15 avril   | Sécurité 8, 9 et 10       |                   |
+| 13 avril   | Sécurité 7                |                   |
+| 15 avril   | Sécurité 6, 8, 9 et 10    |                   |
 | 20 avril   | Sécurité AI               |                   |
 | 22 avril   | Temps pour l'atelier 9    |                   |
 | 27 avril   | **Examen Sécurité**       |                   |
