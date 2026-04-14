@@ -27,6 +27,7 @@
     * [Affichage](notes/php/affichage.md)
     * [Superglobales](notes/php/superglobales.md)
     * [Courriel](notes/php/courriel.md)
+    * [Téléversement](notes/php/upload.md)
   * [Base de données](notes/bd/bd.md)
     * [Sécurité](notes/bd/securite.md)
     * [SQL](notes/bd/sql.md)
@@ -65,12 +66,25 @@
         * [Injection de Regex](notes/securite/regex.md)
         * [XSS](notes/securite/xss.md)
     6. Conception non sécurisée
-        * à venir
+        * [Conception fragile](notes/securite/design.md)
+        * [Fuite d'information](notes/securite/leak.md)
+        * [Téléversement de fichiers](notes/securite/upload.md)
+        * [Clickjacking](notes/securite/clickjacking.md)
     7. Échecs d'authentification
         * [Gestion du mot de passe](notes/securite/password.md)
         * [Escalade de privilèges](notes/securite/escalation.md)
         * [Recensement des utilisateurs](notes/securite/enumeration.md)
         * [Vol de session](notes/securite/session_hijack.md)
+    8. Défaillances d'intégrité logicielle et des données
+        * [Pollution de prototype](notes/securite/prototype-pollution.md)
+        * [Assignation massive](notes/securite/mass-assignement.md)
+    9. Défaillances de journalisation et d'alerte
+        * [Journalisation](notes/securite/logs.md)
+    10. Mauvaise gestion des exceptions
+        * [Fuite d'information](notes/securite/leak.md)
+    11. Autres
+        * [Autres](notes/securite/autres.md)
+        * [AI](notes/securite/ia.md)
 
 ## Ateliers
 

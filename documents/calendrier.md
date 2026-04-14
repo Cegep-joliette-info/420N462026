@@ -25,7 +25,7 @@
 | 8 avril    | Sécurité 5                |                   |
 | 13 avril   | Sécurité 7                |                   |
 | 15 avril   | Sécurité 6, 8, 9 et 10    |                   |
-| 20 avril   | Sécurité AI               |                   |
+| 20 avril   | Sécurité autre et AI      |                   |
 | 22 avril   | Temps pour l'atelier 9    |                   |
 | 27 avril   | **Examen Sécurité**       |                   |
 | 29 avril   | Tests unitaires           |                   |

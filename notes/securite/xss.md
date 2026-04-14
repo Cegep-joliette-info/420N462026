@@ -29,6 +29,8 @@ Il existe 3 types de faille XSS: temporaire, permanente et le "Self-XSS".
 
 ## XSS Temporaire
 
+En anglais: _Reflected XSS_
+
 La faille existe lorsque vous utilisez des données non fiables.
 Une donnée est "non fiable" lorsqu'elle peut être modifiable par un utilisateur, soit toutes les variables superglobales sauf $_SESSION.
 
@@ -81,12 +83,16 @@ Pour votre TP vous devez utiliser les deux méthodes.
 
 ### DOM XSS
 
+En anglais: _DOM-based XSS_
+
 Une attaque XSS est aussi possible si votre JavaScript utilise des composants de l'URL.
 Si vous utilisez les ancres (#) ou les paramètres GET (?) en JavaScript, il faut considérer que ce sont des données non-fiables.
 
 Si vous jouez avec des données non-fiables en JavaScript, privilégier la création de noeud DOM ou les fonctions text (innerText) plutôt que les fonctions HTML (innerHTML, insertAdjacentHTML, etc.).
 
 ## XSS Permanent
+
+En anglais: _Stored XSS_
 
 La faille XSS permanente est identique au XSS temporaire.
 La protection est aussi identique.
@@ -106,4 +112,6 @@ Ouvrez [facebook.com](http://facebook.com) et ouvrez la console, vous verrez l'a
 
 Références:
  * https://www.hacksplaining.com/app/lessons/xss-stored/prevention
+ * https://www.hacksplaining.com/app/lessons/xss-reflected/prevention
+ * https://www.hacksplaining.com/app/lessons/xss-dom/prevention
  * https://portswigger.net/web-security/cross-site-scripting
