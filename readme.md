@@ -85,6 +85,11 @@
     11. Autres
         * [Autres](notes/securite/autres.md)
         * [AI](notes/securite/ia.md)
+  * [Tests](notes/tests/tests.md)
+    * [Codeception](notes/tests/codecept.md)
+    * [Tests unitaires](notes/tests/unit.md)
+    * [Éléments de remplacements et simulacres](notes/tests/mock.md)
+    * [Tests d'acceptation](notes/tests/accept.md)
 
 ## Ateliers
 
