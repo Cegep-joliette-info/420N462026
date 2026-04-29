@@ -90,6 +90,9 @@
     * [Tests unitaires](notes/tests/unit.md)
     * [Éléments de remplacements et simulacres](notes/tests/mock.md)
     * [Tests d'acceptation](notes/tests/accept.md)
+  * Suppléments
+    * [Stripe](notes/autre/stripe.md)
+    * [GD](notes/autre/gd.md)
 
 ## Ateliers
 
@@ -106,6 +109,7 @@
 ## Travaux pratiques
 
   * [TP1](tps/tp1/tp1.md)
+  * [TP2](tps/tp2/tp2.md)
 
 ## Références
 
