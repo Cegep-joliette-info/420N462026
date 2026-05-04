@@ -39,3 +39,103 @@ Explication des 5 lignes de la fonction:
  5. J'effectue le test (Affirmation);
 
 De cette manière, si ma fonction Somme est brisé, mon test de moyenne va bien fonctionner.
+
+## Exemple complet
+
+```php
+// Version non testable
+
+class ArticleController extends BaseController {
+    function store(): void {
+        $titre   = $_POST['titre'];
+        $contenu = $_POST['contenu'];
+
+        $repo = new ArticleRepository();
+        $repo->create($titre, $contenu);
+
+        $_SESSION['message'] = 'Article créé!';
+
+        header('Location: /articles');
+        exit;
+    }
+}
+
+// Version testable
+
+class ArticleController extends BaseController {
+    private ArticleRepository $repo;
+    private MessageManager    $messages;
+    private Request           $request;
+
+    public function __construct(
+        ArticleRepository $repo     = new ArticleRepository(),
+        MessageManager    $messages = new MessageManager(),
+        Request           $request  = new Request(),
+    ) {
+        $this->repo     = $repo;
+        $this->messages = $messages;
+        $this->request  = $request;
+    }
+
+    public function store(): void {
+        $titre   = $this->request->post('titre');
+        $contenu = $this->request->post('contenu');
+
+        $this->repo->create($titre, $contenu);
+
+        $this->messages->add('Article créé!');
+
+        $this->redirect('/articles');
+    }
+}
+```
+
+### Test unitaire
+
+```php
+class ArticleControllerTest extends TestCase {
+    public function testStoreCreeeUnArticleEtRedirige(): void {
+        // 1. Mock du repository
+        $mockRepo = $this->getMockBuilder(ArticleRepository::class)
+            ->onlyMethods(['create'])
+            ->getMock();
+
+        $mockRepo->expects($this->once())
+            ->method('create')
+            ->with('Mon titre', 'Mon contenu');
+
+        // 2. Mock du MessageManager
+        $mockMessages = $this->getMockBuilder(MessageManager::class)
+            ->onlyMethods(['add'])
+            ->getMock();
+
+        $mockMessages->expects($this->once())
+            ->method('add')
+            ->with('Article créé!');
+
+        // 3. Mock de la Request
+        $mockRequest = $this->getMockBuilder(Request::class)
+            ->onlyMethods(['post'])
+            ->getMock();
+
+        $mockRequest->method('post')
+            ->willReturnMap([
+                ['titre',   'Mon titre'],
+                ['contenu', 'Mon contenu'],
+            ]);
+
+        // 4. Mock du contrôleur pour intercepter redirect()
+        $controller = $this->getMockBuilder(ArticleController::class)
+            ->setConstructorArgs([$mockRepo, $mockMessages, $mockRequest])
+            ->onlyMethods(['redirect'])
+            ->getMock();
+
+        $controller->expects($this->once())
+            ->method('redirect')
+            ->with('/articles');
+
+        // 5. Appeler l'action
+        $controller->store();
+    }
+}
+```
