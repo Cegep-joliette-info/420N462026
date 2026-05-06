@@ -1,37 +1,21 @@
-# Stripe en PHP — Mode développement
+# Stripe en PHP
 
 ## Installation
 
 ```bash
 composer require stripe/stripe-php
 
-# Ou
+# Ou avec Docker
 docker compose exec php composer require stripe/stripe-php
 ```
 
 ---
 
-## Configuration des clés API
+## Configuration et initialisation
 
-Stripe fournit deux paires de clés : **test** (développement) et **live** (production).
+Stripe fournit deux paires de clés : **test** (développement) et **live** (production). Les clés de test se trouvent dans le [Dashboard Stripe](https://dashboard.stripe.com/test/apikeys) sous **Developers > API keys**.
 
-```php
-// config.php
-define('STRIPE_SECRET_KEY', 'sk_test_VOTRE_CLE_SECRETE');
-define('STRIPE_PUBLIC_KEY', 'pk_test_VOTRE_CLE_PUBLIQUE');
-```
-
-> Les clés de test se trouvent dans le [Dashboard Stripe](https://dashboard.stripe.com/test/apikeys) sous **Developers > API keys**.
-
----
-
-## Initialisation
-
-```php
-require_once 'vendor/stripe/stripe-php/init.php';
-
-\Stripe\Stripe::setApiKey(STRIPE_SECRET_KEY);
-```
+La clé publique (`pk_test_`) est utilisée dans le frontend (JavaScript) pour tokeniser les cartes, tandis que la clé secrète (`sk_test_`) est utilisée dans le backend (PHP) pour créer des paiements.
 
 ---
 
@@ -53,88 +37,113 @@ Ces numéros fonctionnent **uniquement avec les clés `sk_test_`**.
 Pour **toutes** ces cartes :
 - **Date d'expiration** : n'importe quelle date future (ex. `12/34`)
 - **CVC** : n'importe quels 3 chiffres (ex. `123`)
-- **Code postal** : n'importe lequel (ex. `J6E 4T1`)
 
 ---
 
-## Créer un PaymentIntent
+## Flux de paiement complet
 
-Un `PaymentIntent` représente l'intention de collecter un paiement.
+Les numéros de carte ne doivent **jamais** transiter par ton serveur — c'est une exigence PCI DSS. Stripe fournit **Stripe.js** pour tokeniser la carte directement dans le navigateur.
+
+```
+Navigateur → Stripe (via Stripe.js) → retourne un paymentMethod.id
+                                                    ↓
+                               Ton serveur PHP reçoit seulement l'ID
+```
+
+### Étape 1 — Frontend (HTML + JS)
+
+```html
+<!-- Charger Stripe.js depuis les serveurs de Stripe -->
+<script src="https://js.stripe.com/v3/"></script>
+
+<form id="formulaire-paiement">
+    <!-- Stripe injecte un iframe sécurisé dans ce div -->
+    <div id="card-element"></div>
+    <button type="submit">Payer</button>
+    <p id="erreur"></p>
+</form>
+
+<script>
+const stripe = Stripe('pk_test_VOTRE_CLE_PUBLIQUE');
+
+// Créer le champ de carte (iframe géré par Stripe)
+// hidePostalCode: true évite le champ ZIP américain (incompatible avec les codes postaux canadiens)
+const elements = stripe.elements();
+const card = elements.create('card', { hidePostalCode: true });
+card.mount('#card-element');
+
+document.getElementById('formulaire-paiement').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Stripe envoie les données directement à ses serveurs — ton serveur ne voit rien
+    const { paymentMethod, error } = await stripe.createPaymentMethod({
+        type: 'card',
+        card: card,
+    });
+
+    if (error) {
+        document.getElementById('erreur').textContent = error.message;
+        return;
+    }
+
+    // Envoyer seulement l'ID au backend
+    const response = await fetch('/payer.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ payment_method_id: paymentMethod.id }),
+    });
+
+    const data = await response.json();
+
+    if (data.status === 'succeeded') {
+        alert('Paiement réussi !');
+    } else {
+        alert('Erreur : ' + data.status);
+    }
+});
+</script>
+```
+
+### Étape 2 — Backend (payer.php)
 
 ```php
+// Cet API devrait être dans une action/controlleur sécurisé, pas juste un script public
+require_once 'vendor/stripe/stripe-php/init.php';
+
+define('STRIPE_SECRET_KEY', 'sk_test_VOTRE_CLE_SECRETE'); // pourrait être défini dans un .env ou config.php
+
+\Stripe\Stripe::setApiKey(STRIPE_SECRET_KEY);
+
+$data = json_decode(file_get_contents('php://input'), true);
+
 try {
     $paymentIntent = \Stripe\PaymentIntent::create([
-        'amount'   => 2000,       // montant en cents (20,00 $CAD)
-        'currency' => 'cad',
-        'payment_method_types' => ['card'],
+        'amount'         => 2000,           // en cents (20,00 $CAD)
+        'currency'       => 'cad',
+        'payment_method' => $data['payment_method_id'],
+        'confirm'        => true,
+        'return_url'     => 'https://exemple.com/retour',
     ]);
+    // Sauvegarder dans la base de données et ajouter aux logs
 
-    echo $paymentIntent->client_secret; // à transmettre au frontend
+    echo json_encode(['status' => $paymentIntent->status]);
 } catch (\Stripe\Exception\ApiErrorException $e) {
-    echo 'Erreur Stripe : ' . $e->getMessage();
+    echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
 }
 ```
 
----
+### Étape 3 — Vérifier le statut après redirection 3DS
 
-## Confirmer un paiement côté serveur (sans frontend)
-
-Utile pour tester rapidement sans interface JS.
-
-```php
-// 1. Créer un PaymentMethod avec une carte de test
-$paymentMethod = \Stripe\PaymentMethod::create([
-    'type' => 'card',
-    'card' => [
-        'number'    => '4242424242424242',
-        'exp_month' => 12,
-        'exp_year'  => 2034,
-        'cvc'       => '123',
-    ],
-]);
-
-// 2. Créer et confirmer le PaymentIntent en une seule étape
-$paymentIntent = \Stripe\PaymentIntent::create([
-    'amount'               => 2000,
-    'currency'             => 'cad',
-    'payment_method'       => $paymentMethod->id,
-    'confirm'              => true,
-    'return_url'           => 'https://exemple.com/retour',
-]);
-
-echo 'Statut : ' . $paymentIntent->status; // "succeeded"
-```
-
-### Ce qui se passe en arrière-plan
-
-En mode test, il n'y a pas de vérification 3DS, donc le return_url est ignoré. Mais en mode production, voici le flux complet :
-
-1. **Ton serveur → Stripe** : tu envoies la demande de paiement avec `confirm: true`
-2. **Stripe → Visa/Mastercard** : Stripe communique avec le réseau de la carte
-3. **Visa demande une vérification 3DS** : Stripe le signale dans la réponse (`status: requires_action`)
-4. **L'utilisateur est redirigé** vers une page de **sa banque** pour entrer un code SMS ou approuver via son app bancaire
-5. **Après vérification** : la banque redirige vers Stripe (en coulisse), puis Stripe redirige vers ton `return_url`
-
-Le `return_url` est obligatoire avec `confirm: true`, même pour des cartes qui ne déclenchent pas de 3DS — Stripe en a besoin au cas où la banque l'exige.
-
-### Paramètres ajoutés au return_url
-
-Stripe ajoute automatiquement ces paramètres à ton URL de retour :
+Certaines cartes déclenchent une vérification 3D Secure : l'acheteur est redirigé vers sa banque, puis Stripe redirige vers ton `return_url` avec ces paramètres :
 
 | Paramètre | Description |
 |---|---|
 | `payment_intent` | L'ID du PaymentIntent (ex. `pi_xxx`) |
-| `payment_intent_client_secret` | Le secret client du PaymentIntent |
+| `payment_intent_client_secret` | Le secret client |
 | `redirect_status` | `succeeded`, `failed`, ou `canceled` |
 
-Exemple d'URL reçue :
-```
-https://exemple.com/retour?payment_intent=pi_xxx&payment_intent_client_secret=pi_xxx_secret_xxx&redirect_status=succeeded
-```
-
-Côté PHP, tu vérifies le vrai statut ainsi :
-
 ```php
+// retour.php
 $paymentIntentId = $_GET['payment_intent'];
 $paymentIntent = \Stripe\PaymentIntent::retrieve($paymentIntentId);
 
@@ -177,7 +186,6 @@ echo 'Remboursement : ' . $refund->status; // "succeeded"
 try {
     // appel Stripe...
 } catch (\Stripe\Exception\CardException $e) {
-    // Carte refusée
     echo 'Carte refusée : ' . $e->getError()->message;
 } catch (\Stripe\Exception\RateLimitException $e) {
     echo 'Trop de requêtes.';
@@ -189,19 +197,6 @@ try {
     echo 'Erreur réseau.';
 } catch (\Stripe\Exception\ApiErrorException $e) {
     echo 'Erreur générique Stripe : ' . $e->getMessage();
-}
-```
-
----
-
-## Vérifier qu'on est bien en mode test
-
-```php
-$account = \Stripe\Account::retrieve();
-if ($account->settings->dashboard->display_name !== null) {
-    // Vérifier la clé utilisée
-    $isTestMode = str_starts_with(STRIPE_SECRET_KEY, 'sk_test_');
-    echo $isTestMode ? 'Mode TEST' : 'Mode PRODUCTION — attention !';
 }
 ```
 
